@@ -1,5 +1,6 @@
 package edu.AnastasiiaTkachuk.entity;
 
+import edu.AnastasiiaTkachuk.converter.BirthdayConverter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,8 +20,10 @@ public class User {
     private String username;
     private String firstname;
     private String lastname;
-    private LocalDate birthday;
-    private Integer age;
+
+    //@Convert(converter = BirthdayConverter.class)
+    private Birthday birthday;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 }
