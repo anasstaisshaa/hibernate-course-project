@@ -1,5 +1,6 @@
 package edu.AnastasiiaTkachuk;
 
+import edu.AnastasiiaTkachuk.entity.Birthday;
 import edu.AnastasiiaTkachuk.entity.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
@@ -22,11 +23,6 @@ class HibernateRunnerTest {
     @Test
     void checkReflectionApi() throws SQLException, IllegalAccessException {
         User user = User.builder()
-                .username("test@gmail.com")
-                .firstname("Ivan")
-                .lastname("Ivanov")
-                .birthday(LocalDate.of(2000, 1, 19))
-                .age(23)
                 .build();
 
         String sql = """
