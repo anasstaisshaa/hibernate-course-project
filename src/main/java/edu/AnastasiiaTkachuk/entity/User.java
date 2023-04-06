@@ -1,8 +1,6 @@
 package edu.AnastasiiaTkachuk.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,4 +21,6 @@ public class User {
     private String lastname;
     private LocalDate birthday;
     private Integer age;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }
