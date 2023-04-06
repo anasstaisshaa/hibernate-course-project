@@ -1,5 +1,6 @@
 package edu.AnastasiiaTkachuk;
 
+import edu.AnastasiiaTkachuk.entity.Role;
 import edu.AnastasiiaTkachuk.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -32,6 +33,7 @@ public class HibernateRunner {
                     .lastname("Ivanov")
                     .birthday(LocalDate.of(2000, 1, 19))
                     .age(23)
+                    .role(Role.ADMIN)
                     .build();
             session.persist(user);
             session.getTransaction().commit();
