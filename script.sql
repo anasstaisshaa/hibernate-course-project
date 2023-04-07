@@ -4,5 +4,7 @@ CREATE TABLE users
     firstname VARCHAR(128) ,
     lastname VARCHAR(128),
     birthday DATE,
-    age INT
-)
+    role VARCHAR(32)
+);
+
+DROP TABLE users;

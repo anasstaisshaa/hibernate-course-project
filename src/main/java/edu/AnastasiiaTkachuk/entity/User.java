@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import org.hibernate.annotations.Type;
 import java.time.LocalDate;
 
 @Data
@@ -23,7 +23,6 @@ public class User {
 
     //@Convert(converter = BirthdayConverter.class)
     private Birthday birthday;
-
     @Enumerated(EnumType.STRING)
     private Role role;
 }

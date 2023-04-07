@@ -31,13 +31,16 @@ public class HibernateRunner {
 
             session.beginTransaction();
             User user = User.builder()
-                    .username("test123@gmail.com")
-                    .firstname("Ivan")
+                    .username("ivan@gmail.com")
+                    .firstname("Petr")
                     .lastname("Ivanov")
                     .birthday(new Birthday(LocalDate.of(2000, 1, 19)))
                     .role(Role.ADMIN)
                     .build();
-            session.persist(user);
+//            session.persist(user);
+//            session.merge(user);
+//            session.remove(user);
+            User user1 = session.get(User.class, "ivan@gmail.com");
             session.getTransaction().commit();
         }
     }
