@@ -4,44 +4,45 @@ import edu.AnastasiiaTkachuk.converter.BirthdayConverter;
 import edu.AnastasiiaTkachuk.entity.Birthday;
 import edu.AnastasiiaTkachuk.entity.Role;
 import edu.AnastasiiaTkachuk.entity.User;
+import edu.AnastasiiaTkachuk.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.concurrent.BlockingDeque;
 
 public class HibernateRunner {
+    private static final Logger log = LoggerFactory.getLogger(HibernateRunner.class);
+
 
     public static void main(String[] args) throws SQLException {
-        //BlockingDeque<Connection> pool = null;  // SessionFactory
-        //Connection connection1 = pool.take();
-        //Connection connection = DriverManager.getConnection("db.url", "db.username", "db.password");  //Session
+        User user = User.builder()
+                .username("ivan@gmail.com")
+                .lastname("Ivanov")
+                .firstname("Ivan")
+                .build();
+        log.info("User entity is in transient state, object: {}", user);
 
-        Configuration configuration = new Configuration();
-        //configuration.addAnnotatedClass(User.class);
-        configuration.addAttributeConverter(new BirthdayConverter());
-        configuration.configure();
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
+            Session session1 = sessionFactory.openSession();
+            try (session1) {
+                Transaction transaction = session1.beginTransaction();
+                log.trace("Transaction is created, {}", transaction);
 
-        try (SessionFactory sessionFactory = configuration.buildSessionFactory();
-             Session session = sessionFactory.openSession()) {
+                session1.merge(user);
+                log.trace("User is in persistent state: {}, session {}", user, session1);
 
-            session.beginTransaction();
-            User user = User.builder()
-                    .username("ivan@gmail.com")
-                    .firstname("Petr")
-                    .lastname("Ivanov")
-                    .birthday(new Birthday(LocalDate.of(2000, 1, 19)))
-                    .role(Role.ADMIN)
-                    .build();
-//            session.persist(user);
-//            session.merge(user);
-//            session.remove(user);
-            User user1 = session.get(User.class, "ivan@gmail.com");
-            session.getTransaction().commit();
+                session1.getTransaction().commit();
+            }
+            log.warn("User is in detached state: {}, session is close{}", user, session1);
+        } catch (Exception e){
+            log.error("Exception occurred", e);
+            throw e;
         }
     }
 }
