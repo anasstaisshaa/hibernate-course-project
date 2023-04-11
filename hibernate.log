@@ -1,0 +1,24 @@
+[2023-04-11 13:29:25,294] INFO [edu.AnastasiiaTkachuk.HibernateRunner: 29] User entity is in transient state, object: User(username=ivan@gmail.com, firstname=Ivan, lastname=Ivanov, birthday=null, role=null)
+[2023-04-11 13:29:25,486] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-11 13:29:26,737] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-11 13:29:26,742] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-11 13:29:26,742] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-11 13:29:26,743] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-11 13:29:26,743] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-11 13:29:26,750] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-11 13:29:27,241] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-11 13:29:28,975] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-04-11 13:29:29,175] WARN [edu.AnastasiiaTkachuk.HibernateRunner: 42] User is in detached state: User(username=ivan@gmail.com, firstname=Ivan, lastname=Ivanov, birthday=null, role=null), session is closeSessionImpl(512029640<closed>)
+[2023-04-11 13:29:29,178] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-11 13:32:10,453] INFO [edu.AnastasiiaTkachuk.HibernateRunner: 29] User entity is in transient state, object: User(username=ivan@gmail.com, firstname=Ivan, lastname=Ivanov, birthday=null, role=null)
+[2023-04-11 13:32:10,601] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-11 13:32:11,766] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-11 13:32:11,771] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-11 13:32:11,772] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-11 13:32:11,773] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-11 13:32:11,775] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-11 13:32:11,780] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-11 13:32:12,182] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-11 13:32:13,849] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-04-11 13:32:14,053] WARN [edu.AnastasiiaTkachuk.HibernateRunner: 42] User is in detached state: User(username=ivan@gmail.com, firstname=Ivan, lastname=Ivanov, birthday=null, role=null), session is closeSessionImpl(871461513<closed>)
+[2023-04-11 13:32:14,055] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
