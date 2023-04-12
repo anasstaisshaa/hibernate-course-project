@@ -25,7 +25,7 @@ public class HibernateRunner {
         configuration.addAttributeConverter(new BirthdayConverter(), true);
         configuration.configure();
         User user = User.builder()
-                .username("petr2@gmail.com")
+                .username("petr1@gmail.com")
                 .personalInfo(PersonalInfo.builder()
                         .lastname("Petrov")
                         .firstname("Petr")
@@ -47,6 +47,15 @@ public class HibernateRunner {
                 session1.getTransaction().commit();
             }
             log.warn("User is in detached state: {}, session is close{}", user, session1);
+            try (Session session = sessionFactory.openSession()){
+                PersonalInfo key = PersonalInfo.builder()
+                        .lastname("Petrov")
+                        .firstname("Petr")
+                        .birthday(new Birthday(LocalDate.of(2000, 1, 19)))
+                        .build();
+
+                User user1 = session.get(User.class, key);
+            }
         } catch (Exception e){
             log.error("Exception occurred", e);
             throw e;
