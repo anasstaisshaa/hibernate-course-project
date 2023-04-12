@@ -1,13 +1,10 @@
 package edu.AnastasiiaTkachuk.entity;
 
-import edu.AnastasiiaTkachuk.converter.BirthdayConverter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Type;
-import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -17,12 +14,12 @@ import java.time.LocalDate;
 @Table(name = "users")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(unique = true)
     private String username;
-    private String firstname;
-    private String lastname;
-
-    //@Convert(converter = BirthdayConverter.class)
-    private Birthday birthday;
+    @Embedded
+    private PersonalInfo personalInfo;
     @Enumerated(EnumType.STRING)
     private Role role;
 }
