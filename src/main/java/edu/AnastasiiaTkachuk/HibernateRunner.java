@@ -35,6 +35,7 @@ public class HibernateRunner {
                 .company(company)
                 .build();
 
+
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
             Session session1 = sessionFactory.openSession();
             try (session1) {
