@@ -21,11 +21,11 @@ public class HibernateRunner {
     public static void main(String[] args) throws SQLException {
 
         Company company = Company.builder()
-                .name("Apple")
+                .name("Amazon")
                 .build();
 
         User user = User.builder()
-                .username("petr@gmail.com")
+                .username("ivan@gmail.com")
                 .personalInfo(PersonalInfo.builder()
                         .lastname("Petrov")
                         .firstname("Petr")
@@ -41,13 +41,10 @@ public class HibernateRunner {
                 Transaction transaction = session1.beginTransaction();
 
 //                session1.persist(company);
-//                session1.persist(user);
+                session1.persist(user);
 
-                User user1 = session1.get(User.class, 1L);
-                Company company1 = user1.getCompany();
-                String name = company1.getName();
-
-                Object object = Hibernate.unproxy(company1);
+//                User user1 = session1.get(User.class, 1L);
+//                session1.evict(user1);
 
                 session1.getTransaction().commit();
             }
