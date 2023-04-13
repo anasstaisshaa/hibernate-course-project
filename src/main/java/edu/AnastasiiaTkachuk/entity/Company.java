@@ -6,26 +6,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "users")
-public class User {
+public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    private PersonalInfo personalInfo;
-
-    @Column(unique = true)
-    private String username;
-
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
-    @ManyToOne
-    @JoinColumn(name = "company_id")
-    private Company company;
+    private String name;
 }
