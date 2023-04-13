@@ -1,10 +1,7 @@
 package edu.AnastasiiaTkachuk;
 
 import edu.AnastasiiaTkachuk.converter.BirthdayConverter;
-import edu.AnastasiiaTkachuk.entity.Birthday;
-import edu.AnastasiiaTkachuk.entity.PersonalInfo;
-import edu.AnastasiiaTkachuk.entity.Role;
-import edu.AnastasiiaTkachuk.entity.User;
+import edu.AnastasiiaTkachuk.entity.*;
 import edu.AnastasiiaTkachuk.util.HibernateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
@@ -21,44 +18,34 @@ import java.time.LocalDate;
 @Slf4j
 public class HibernateRunner {
     public static void main(String[] args) throws SQLException {
-        Configuration configuration = new Configuration();
-        configuration.addAttributeConverter(new BirthdayConverter(), true);
-        configuration.configure();
+
+        Company company = Company.builder()
+                .name("Apple")
+                .build();
+
         User user = User.builder()
-                .username("petr1@gmail.com")
+                .username("petr@gmail.com")
                 .personalInfo(PersonalInfo.builder()
                         .lastname("Petrov")
                         .firstname("Petr")
                         .birthday(new Birthday(LocalDate.of(2000, 1, 19)))
                         .build())
                 .role(Role.ADMIN)
+                .company(company)
                 .build();
-        log.info("User entity is in transient state, object: {}", user);
 
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
             Session session1 = sessionFactory.openSession();
             try (session1) {
                 Transaction transaction = session1.beginTransaction();
-                log.trace("Transaction is created, {}", transaction);
 
-                session1.merge(user);
-                log.trace("User is in persistent state: {}, session {}", user, session1);
+                session1.persist(company);
+                session1.persist(user);
+
+                //session1.get(User.class, 1L);
 
                 session1.getTransaction().commit();
             }
-            log.warn("User is in detached state: {}, session is close{}", user, session1);
-            try (Session session = sessionFactory.openSession()){
-                PersonalInfo key = PersonalInfo.builder()
-                        .lastname("Petrov")
-                        .firstname("Petr")
-                        .birthday(new Birthday(LocalDate.of(2000, 1, 19)))
-                        .build();
-
-                User user1 = session.get(User.class, key);
-            }
-        } catch (Exception e){
-            log.error("Exception occurred", e);
-            throw e;
         }
     }
 }

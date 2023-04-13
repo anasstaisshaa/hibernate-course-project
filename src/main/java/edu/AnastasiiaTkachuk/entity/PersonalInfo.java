@@ -14,9 +14,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @Embeddable
-public class PersonalInfo implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 1L;
+public class PersonalInfo {
 
     private String firstname;
     private String lastname;
