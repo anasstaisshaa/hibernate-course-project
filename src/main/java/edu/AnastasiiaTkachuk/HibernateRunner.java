@@ -4,6 +4,7 @@ import edu.AnastasiiaTkachuk.converter.BirthdayConverter;
 import edu.AnastasiiaTkachuk.entity.*;
 import edu.AnastasiiaTkachuk.util.HibernateUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -39,10 +40,14 @@ public class HibernateRunner {
             try (session1) {
                 Transaction transaction = session1.beginTransaction();
 
-                session1.persist(company);
-                session1.persist(user);
+//                session1.persist(company);
+//                session1.persist(user);
 
-                //session1.get(User.class, 1L);
+                User user1 = session1.get(User.class, 1L);
+                Company company1 = user1.getCompany();
+                String name = company1.getName();
+
+                Object object = Hibernate.unproxy(company1);
 
                 session1.getTransaction().commit();
             }
