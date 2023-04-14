@@ -1,9 +1,14 @@
 package edu.AnastasiiaTkachuk;
 
 import edu.AnastasiiaTkachuk.entity.Birthday;
+import edu.AnastasiiaTkachuk.entity.Company;
 import edu.AnastasiiaTkachuk.entity.User;
+import edu.AnastasiiaTkachuk.util.HibernateUtil;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
+import lombok.Cleanup;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Constructor;
@@ -23,6 +28,18 @@ import static java.util.stream.Collectors.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class HibernateRunnerTest {
+    @Test
+    void oneToMany(){
+        @Cleanup SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+        @Cleanup Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        Company company = session.get(Company.class, 1);
+        System.out.println("");
+
+        session.getTransaction().commit();
+    }
     @Test
     void checkGetReflectionApi() throws SQLException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
         PreparedStatement preparedStatement = null;
