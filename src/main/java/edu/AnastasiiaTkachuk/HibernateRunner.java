@@ -15,17 +15,18 @@ import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Slf4j
 public class HibernateRunner {
     public static void main(String[] args) throws SQLException {
 
         Company company = Company.builder()
-                .name("Amazon")
+                .name("Meta")
                 .build();
 
         User user = User.builder()
-                .username("ivan@gmail.com")
+                .username("nastya@gmail.com")
                 .personalInfo(PersonalInfo.builder()
                         .lastname("Petrov")
                         .firstname("Petr")
@@ -41,8 +42,13 @@ public class HibernateRunner {
             try (session1) {
                 Transaction transaction = session1.beginTransaction();
 
-//                session1.persist(company);
-                session1.persist(user);
+                //session1.persist(company);
+                //session1.persist(user);
+                //company.getUsers().add(user);
+                company.addUser(user);
+                Set<User> users = company.getUsers();
+                System.out.println(users.size());
+
 
 //                User user1 = session1.get(User.class, 1L);
 //                session1.evict(user1);
