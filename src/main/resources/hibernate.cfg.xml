@@ -15,6 +15,7 @@
     <mapping class="edu.AnastasiiaTkachuk.entity.User"/>
     <mapping class="edu.AnastasiiaTkachuk.entity.Company"/>
     <mapping class="edu.AnastasiiaTkachuk.entity.Profile"/>
+    <mapping class="edu.AnastasiiaTkachuk.entity.Chat"/>
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
   </session-factory>

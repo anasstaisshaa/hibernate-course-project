@@ -1,9 +1,6 @@
 package edu.AnastasiiaTkachuk;
 
-import edu.AnastasiiaTkachuk.entity.Birthday;
-import edu.AnastasiiaTkachuk.entity.Company;
-import edu.AnastasiiaTkachuk.entity.Profile;
-import edu.AnastasiiaTkachuk.entity.User;
+import edu.AnastasiiaTkachuk.entity.*;
 import edu.AnastasiiaTkachuk.util.HibernateUtil;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
@@ -31,6 +28,23 @@ import static java.util.stream.Collectors.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class HibernateRunnerTest {
+    @Test
+    void checkManyToMany(){
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+            Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            User user = session.get(User.class, 9L);
+
+            Chat chat = Chat.builder()
+                    .name("nastya")
+                    .build();
+            user.addChat(chat);
+            session.persist(chat);
+
+            session.getTransaction().commit();
+        }
+    }
 
     @Test
     void checkOneToOne(){
