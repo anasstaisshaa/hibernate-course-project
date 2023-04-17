@@ -29,6 +29,19 @@ import static java.util.stream.Collectors.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class HibernateRunnerTest {
+    @Test
+    void localeInfo(){
+        try (var sessionFactory = HibernateUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            Company company = session.get(Company.class, 1);
+            company.getLocales().add(LocaleInfo.of("ru", "Описание на русском"));
+            company.getLocales().add(LocaleInfo.of("en", "English description"));
+
+            session.getTransaction().commit();
+        }
+    }
 
     @Test
     void checkManyToMany() {
