@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Optional;
@@ -28,19 +29,33 @@ import static java.util.stream.Collectors.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class HibernateRunnerTest {
+
     @Test
-    void checkManyToMany(){
-        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
-            Session session = sessionFactory.openSession()) {
+    void checkManyToMany() {
+        try (var sessionFactory = HibernateUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
             session.beginTransaction();
 
-            User user = session.get(User.class, 9L);
+            var user = session.get(User.class, 9L);
+            var chat = session.get(Chat.class, 1L);
 
-            Chat chat = Chat.builder()
-                    .name("nastya")
+            var userChat = UserChat.builder()
+                    .createdAt(Instant.now())
+                    .createdBy(user.getUsername())
                     .build();
-            user.addChat(chat);
-            session.persist(chat);
+            userChat.setUser(user);
+            userChat.setChat(chat);
+
+            session.persist(userChat);
+
+//            user.getChats().clear();
+
+//            var chat = Chat.builder()
+//                    .name("dmdev")
+//                    .build();
+//            user.addChat(chat);
+//
+//            session.save(chat);
 
             session.getTransaction().commit();
         }
