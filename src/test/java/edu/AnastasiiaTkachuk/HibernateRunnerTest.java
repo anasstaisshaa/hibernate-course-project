@@ -24,6 +24,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static java.lang.System.out;
 import static java.util.Optional.ofNullable;
 import static java.util.stream.Collectors.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,9 +39,7 @@ class HibernateRunnerTest {
             Company company = session.get(Company.class, 1);
 //            company.getLocales().add(LocaleInfo.of("ru", "Описание на русском"));
 //            company.getLocales().add(LocaleInfo.of("en", "English description"));
-
-            company.getUsers().forEach(System.out::println);
-
+            company.getUsers().forEach((k, v) -> System.out.println(v));
             session.getTransaction().commit();
         }
     }
@@ -104,7 +103,7 @@ class HibernateRunnerTest {
             session.beginTransaction();
 
             Company company = session.get(Company.class, 7);
-            company.getUsers().removeIf(user -> user.getId().equals(7L));
+            //company.getUsers().removeIf(user -> user.getId().equals(7L));
 
             session.getTransaction().commit();
         }
@@ -168,7 +167,7 @@ class HibernateRunnerTest {
         session.beginTransaction();
 
         Company company = session.get(Company.class, 1);
-        System.out.println("");
+        out.println("");
 
         session.getTransaction().commit();
     }
@@ -216,7 +215,7 @@ class HibernateRunnerTest {
                 .map(field -> "?")
                 .collect(joining(", "));
 
-        System.out.println(sql.formatted(tableName, columnNames, columnValues));
+        out.println(sql.formatted(tableName, columnNames, columnValues));
 
         Connection connection = null;
         PreparedStatement preparedStatement = connection.prepareStatement(sql.formatted(tableName, columnNames, columnValues));

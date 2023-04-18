@@ -46,8 +46,8 @@ public class HibernateRunner {
                 //session1.persist(user);
                 //company.getUsers().add(user);
                 company.addUser(user);
-                Set<User> users = company.getUsers();
-                System.out.println(users.size());
+                //Set<User> users = company.getUsers();
+                //System.out.println(users.size());
 
 
 //                User user1 = session1.get(User.class, 1L);
