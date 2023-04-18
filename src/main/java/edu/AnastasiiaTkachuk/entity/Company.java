@@ -26,6 +26,8 @@ public class Company {
 
     @Builder.Default
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    //@org.hibernate.annotations.OrderBy(clause = "username DESC, lastname ASC")
+    @OrderBy("username DESC, personalInfo.lastname ASC ")
     private Set<User> users = new HashSet<>();
 
     @Builder.Default
