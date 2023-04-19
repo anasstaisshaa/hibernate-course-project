@@ -25,16 +25,16 @@ public class HibernateRunner {
                 .name("Meta")
                 .build();
 
-        User user = User.builder()
-                .username("nastya@gmail.com")
-                .personalInfo(PersonalInfo.builder()
-                        .lastname("Petrov")
-                        .firstname("Petr")
-                        .birthday(new Birthday(LocalDate.of(2000, 1, 19)))
-                        .build())
-                .role(Role.ADMIN)
-                .company(company)
-                .build();
+//        User user = User.builder()
+//                .username("nastya@gmail.com")
+//                .personalInfo(PersonalInfo.builder()
+//                        .lastname("Petrov")
+//                        .firstname("Petr")
+//                        .birthday(new Birthday(LocalDate.of(2000, 1, 19)))
+//                        .build())
+//                .role(Role.ADMIN)
+//                .company(company)
+//                .build();
 
 
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
@@ -45,7 +45,7 @@ public class HibernateRunner {
                 //session1.persist(company);
                 //session1.persist(user);
                 //company.getUsers().add(user);
-                company.addUser(user);
+//                company.addUser(user);
                 //Set<User> users = company.getUsers();
                 //System.out.println(users.size());
 
