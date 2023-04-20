@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@PrimaryKeyJoinColumn(name = "id")
 public class Programmer extends User{
     @Enumerated(EnumType.STRING)
     private Language language;
