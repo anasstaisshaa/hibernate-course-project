@@ -38,11 +38,13 @@ class HibernateRunnerTest {
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
 
+//            HQL / JPQL
+//            select u.* from users u where u.firstname = 'Ivan'
             String name = "Ivan";
-            List<User> result = session.createQuery(
-                    "select u from User u " +
-                            "join u.company c " +
-                            "where u.personalInfo.firstname = :firstname and c.name = :companyName", User.class)
+            var result = session.createNamedQuery(
+//                    "select u from User u where u.personalInfo.firstname = ?1", User.class)
+                            "findUserByName", User.class)
+//                    .setParameter(1, name)
                     .setParameter("firstname", name)
                     .setParameter("companyName", "Google")
                     .list();
