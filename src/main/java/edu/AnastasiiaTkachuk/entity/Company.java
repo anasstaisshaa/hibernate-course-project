@@ -2,6 +2,7 @@ package edu.AnastasiiaTkachuk.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.BatchSize;
 
 import java.util.*;
 
@@ -13,6 +14,7 @@ import java.util.*;
 @EqualsAndHashCode(of = "name")
 @Builder
 @Entity
+@BatchSize(size = 3)
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -2,6 +2,7 @@ package edu.AnastasiiaTkachuk.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.BatchSize;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,10 +18,11 @@ import java.util.Set;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "username")
 @ToString(exclude = {"company", "profile", "userChats"})
+@Builder
 @Entity
 @Table(name = "users")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class User {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -40,7 +42,8 @@ public abstract class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Profile profile;
 
-    //@Builder.Default
+    @Builder.Default
+    @BatchSize(size = 3)
     @OneToMany(mappedBy = "user")
     private List<UserChat> userChats = new ArrayList<>();
 

@@ -71,5 +71,9 @@ public class UserDao {
         return session.createQuery(criteria)
                 .list();
     }
+
+    public static UserDao getInstance(){
+        return INSTANCE;
+    }
 }
 

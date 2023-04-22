@@ -3,6 +3,7 @@ package edu.AnastasiiaTkachuk;
 import edu.AnastasiiaTkachuk.converter.BirthdayConverter;
 import edu.AnastasiiaTkachuk.entity.*;
 import edu.AnastasiiaTkachuk.util.HibernateUtil;
+import edu.AnastasiiaTkachuk.util.TestDataImporter;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
@@ -15,46 +16,27 @@ import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 @Slf4j
 public class HibernateRunner {
     public static void main(String[] args) throws SQLException {
 
-        Company company = Company.builder()
-                .name("Meta")
-                .build();
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+        Session session = sessionFactory.openSession()) {
 
-//        User user = User.builder()
-//                .username("nastya@gmail.com")
-//                .personalInfo(PersonalInfo.builder()
-//                        .lastname("Petrov")
-//                        .firstname("Petr")
-//                        .birthday(new Birthday(LocalDate.of(2000, 1, 19)))
-//                        .build())
-//                .role(Role.ADMIN)
-//                .company(company)
-//                .build();
+            session.beginTransaction();
+
+//            User user = session.get(User.class, 1L);
+
+            List<User> users = session.createQuery("select u from User u", User.class)
+                    .list();
+            users.forEach(user -> System.out.println(user.getUserChats().size()));
+            users.forEach(user -> System.out.println(user.getCompany().getName()));
 
 
-        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
-            Session session1 = sessionFactory.openSession();
-            try (session1) {
-                Transaction transaction = session1.beginTransaction();
-
-                //session1.persist(company);
-                //session1.persist(user);
-                //company.getUsers().add(user);
-//                company.addUser(user);
-                //Set<User> users = company.getUsers();
-                //System.out.println(users.size());
-
-
-//                User user1 = session1.get(User.class, 1L);
-//                session1.evict(user1);
-
-                session1.getTransaction().commit();
-            }
+            session.getTransaction().commit();
         }
     }
 }
