@@ -3,6 +3,8 @@ package edu.AnastasiiaTkachuk.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -43,7 +45,7 @@ public class User {
     private Profile profile;
 
     @Builder.Default
-    @BatchSize(size = 3)
+    @Fetch(FetchMode.SUBSELECT)
     @OneToMany(mappedBy = "user")
     private List<UserChat> userChats = new ArrayList<>();
 
