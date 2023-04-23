@@ -12,6 +12,16 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@NamedEntityGraph(
+        name = "WithCompanyAndChat",
+        attributeNodes = {
+                @NamedAttributeNode("company"),
+                @NamedAttributeNode(value = "userChats", subgraph = "chats")
+        },
+        subgraphs = {
+                @NamedSubgraph(name = "chats", attributeNodes = @NamedAttributeNode("chat"))
+        }
+)
 @FetchProfile(name = "withCompanyAndChats", fetchOverrides = {
         @FetchProfile.FetchOverride(
                 entity = User.class, association = "company", mode = FetchMode.JOIN

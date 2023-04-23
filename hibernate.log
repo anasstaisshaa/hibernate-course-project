@@ -906,3 +906,51 @@
 [2023-04-23 19:19:39,849] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5eeee124] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 [2023-04-23 19:19:39,911] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 [2023-04-23 19:19:40,334] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-23 20:13:57,094] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-23 20:13:58,466] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-23 20:13:58,473] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-23 20:13:58,474] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-23 20:13:58,474] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-23 20:13:58,474] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-23 20:13:58,481] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-23 20:13:59,243] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-23 20:14:02,010] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-23 20:14:02,554] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@58e03769] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-23 20:14:02,662] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-04-23 20:14:03,474] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-23 20:14:54,077] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-23 20:14:55,300] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-23 20:14:55,305] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-23 20:14:55,305] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-23 20:14:55,306] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-23 20:14:55,306] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-23 20:14:55,312] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-23 20:14:58,256] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-23 20:15:00,014] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-23 20:15:00,563] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2969a9a6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-23 20:15:00,622] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-04-23 20:15:01,507] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-23 20:15:42,894] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-23 20:15:44,107] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-23 20:15:44,113] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-23 20:15:44,114] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-23 20:15:44,114] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-23 20:15:44,116] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-23 20:15:44,120] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-23 20:15:44,568] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-23 20:15:46,744] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-23 20:15:47,274] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7fd751de] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-23 20:15:47,336] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-04-23 20:15:47,850] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-23 20:27:54,520] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-23 20:27:55,648] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-23 20:27:55,656] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-23 20:27:55,657] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-23 20:27:55,658] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-23 20:27:55,659] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-23 20:27:55,667] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-23 20:27:56,134] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-23 20:27:57,845] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-23 20:27:58,349] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4e2cdc51] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-23 20:27:58,404] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-04-23 20:27:59,013] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]

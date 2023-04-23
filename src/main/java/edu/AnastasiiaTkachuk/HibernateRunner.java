@@ -10,6 +10,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.graph.GraphSemantic;
+import org.hibernate.graph.RootGraph;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 @Slf4j
@@ -27,19 +30,24 @@ public class HibernateRunner {
         Session session = sessionFactory.openSession()) {
 
             session.beginTransaction();
-            session.enableFetchProfile("withCompanyAndChats");
-
-            User user = session.get(User.class, 1L);
+//            session.enableFetchProfile("withCompanyAndChats");
+//
+            Map<String, Object> properties = Map.of(
+                    GraphSemantic.LOAD.getJakartaHintName(), session.getEntityGraph("WithCompanyAndChat")
+            );
+            User user = session.find(User.class, 1L, properties);
             System.out.println(user.getCompany().getName());
+            System.out.println(user.getUserChats().size());
 
-//            List<User> users = session.createQuery(
-//                    "select u from User u " +
-//                            "join fetch u.userChats " +
-//                            "join fetch u.company " +
-//                            "where 1 = 1", User.class)
-//                    .list();
-//            users.forEach(user -> System.out.println(user.getUserChats().size()));
-//            users.forEach(user -> System.out.println(user.getCompany().getName()));
+            List<User> users = session.createQuery(
+                    "select u from User u " +
+                            "join fetch u.userChats " +
+                            "join fetch u.company " +
+                            "where 1 = 1", User.class)
+                    .setHint(GraphSemantic.LOAD.getJakartaHintName(), session.getEntityGraph("WithCompanyAndChat"))
+                    .list();
+            users.forEach(it -> System.out.println(it.getUserChats().size()));
+            users.forEach(it -> System.out.println(it.getCompany().getName()));
 
 
             session.getTransaction().commit();

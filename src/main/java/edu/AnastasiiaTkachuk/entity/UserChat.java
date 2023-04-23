@@ -13,10 +13,10 @@ import java.time.Instant;
 @Entity
 @Table(name = "users_chat")
 public class UserChat extends BaseEntity<Long>{
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Chat chat;
 
     @Column(name = "created_at")
