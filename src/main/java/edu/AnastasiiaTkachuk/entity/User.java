@@ -5,12 +5,21 @@ import lombok.*;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.FetchProfile;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@FetchProfile(name = "withCompanyAndChats", fetchOverrides = {
+        @FetchProfile.FetchOverride(
+                entity = User.class, association = "company", mode = FetchMode.JOIN
+        ),
+        @FetchProfile.FetchOverride(
+                entity = User.class, association = "userChats", mode = FetchMode.JOIN
+        )
+})
 @NamedQuery(name = "findUserByName", query = "select u from User u " +
         "left join u.company c " +
         "where u.personalInfo.firstname = :firstname and c.name = :companyName " +
@@ -45,7 +54,7 @@ public class User {
     private Profile profile;
 
     @Builder.Default
-    @Fetch(FetchMode.SUBSELECT)
+    //@Fetch(FetchMode.SUBSELECT)
     @OneToMany(mappedBy = "user")
     private List<UserChat> userChats = new ArrayList<>();
 
