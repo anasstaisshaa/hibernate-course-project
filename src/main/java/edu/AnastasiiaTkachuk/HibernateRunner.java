@@ -4,6 +4,7 @@ import edu.AnastasiiaTkachuk.converter.BirthdayConverter;
 import edu.AnastasiiaTkachuk.entity.*;
 import edu.AnastasiiaTkachuk.util.HibernateUtil;
 import edu.AnastasiiaTkachuk.util.TestDataImporter;
+import jakarta.persistence.LockModeType;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Hibernate;
@@ -32,18 +33,13 @@ public class HibernateRunner {
 
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
         Session session = sessionFactory.openSession()) {
-            session.doWork(connection -> System.out.println(connection.getTransactionIsolation()));
-//            try{
-//                Transaction transaction = session.beginTransaction();
-//
-//                Company company1 = session.find(Company.class, 1L);
-//                Company company2 = session.find(Company.class, 2L);
-//
-//                session.getTransaction().commit();
-//            } catch (Exception exception){
-//                session.getTransaction().rollback();
-//                throw exception;
-//            }
+            session.beginTransaction();
+
+            TestDataImporter.importData(sessionFactory);
+            UserChat userChat = session.find(UserChat.class, 1L, LockModeType.OPTIMISTIC);
+            userChat.setCreatedBy("Anastasiia");
+
+            session.getTransaction().commit();
         }
     }
 }
