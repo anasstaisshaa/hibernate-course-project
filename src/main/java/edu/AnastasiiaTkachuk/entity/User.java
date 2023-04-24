@@ -38,7 +38,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "username")
-@ToString(exclude = {"company", "profile", "userChats"})
+@ToString(exclude = {"company", "userChats"})
 @Builder
 @Entity
 @Table(name = "users")
@@ -60,8 +60,8 @@ public class User {
     @JoinColumn(name = "company_id")
     private Company company;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private Profile profile;
+//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+//    private Profile profile;
 
     @Builder.Default
     //@Fetch(FetchMode.SUBSELECT)

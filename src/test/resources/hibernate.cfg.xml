@@ -20,7 +20,5 @@
         <mapping class="edu.AnastasiiaTkachuk.entity.Profile"/>
         <mapping class="edu.AnastasiiaTkachuk.entity.Chat"/>
         <mapping class="edu.AnastasiiaTkachuk.entity.UserChat"/>
-        <mapping class="edu.AnastasiiaTkachuk.entity.Programmer"/>
-        <mapping class="edu.AnastasiiaTkachuk.entity.Manager"/>
     </session-factory>
 </hibernate-configuration>
