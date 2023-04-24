@@ -2,6 +2,7 @@ package edu.AnastasiiaTkachuk.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.OptimisticLockType;
 import org.hibernate.annotations.OptimisticLocking;
 
@@ -14,13 +15,14 @@ import java.time.Instant;
 @Builder
 @Entity
 @Table(name = "users_chat")
-@OptimisticLocking(type = OptimisticLockType.VERSION)
+//@OptimisticLocking(type = OptimisticLockType.ALL)
+//@DynamicUpdate
 public class UserChat extends BaseEntity<Long>{
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    @Version
-    private Long version;
+//    @Version
+//    private Long version;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Chat chat;
