@@ -1,5 +1,6 @@
 package edu.AnastasiiaTkachuk.entity;
 
+import edu.AnastasiiaTkachuk.listener.AuditListener;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
@@ -13,6 +14,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Builder
+@EntityListeners(AuditListener.class)
 @Entity
 @Table(name = "users_chat")
 //@OptimisticLocking(type = OptimisticLockType.ALL)

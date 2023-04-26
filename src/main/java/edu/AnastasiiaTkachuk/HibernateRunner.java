@@ -35,16 +35,9 @@ public class HibernateRunner {
 
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
         Session session = sessionFactory.openSession()) {
-            session.setDefaultReadOnly(true);
             session.beginTransaction();
 
-            session.createQuery("select c from UserChat c", UserChat.class)
-                    .setLockMode(LockModeType.OPTIMISTIC)
-                    .setReadOnly(true)
-                    .list();
-
-            UserChat userChat = session.find(UserChat.class, 1L);
-            userChat.setCreatedBy("Petr");
+            TestDataImporter.importData(sessionFactory);
 
             session.getTransaction().commit();
         }
