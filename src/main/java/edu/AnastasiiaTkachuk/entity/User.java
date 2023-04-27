@@ -1,11 +1,11 @@
 package edu.AnastasiiaTkachuk.entity;
 
 import jakarta.persistence.*;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Table;
 import lombok.*;
-import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-import org.hibernate.annotations.FetchProfile;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.Cache;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -43,6 +43,7 @@ import java.util.Set;
 @Entity
 @Table(name = "users")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "Users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,6 +66,7 @@ public class User {
 
     @Builder.Default
     //@Fetch(FetchMode.SUBSELECT)
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @OneToMany(mappedBy = "user")
     private List<UserChat> userChats = new ArrayList<>();
 
