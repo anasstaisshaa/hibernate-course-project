@@ -3,6 +3,7 @@ package edu.AnastasiiaTkachuk.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.OptimisticLockType;
 import org.hibernate.annotations.OptimisticLocking;
 
@@ -14,6 +15,7 @@ import java.util.*;
 @AllArgsConstructor
 @ToString(exclude = "users")
 @EqualsAndHashCode(of = "name")
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Builder
 @Entity
 public class Company {

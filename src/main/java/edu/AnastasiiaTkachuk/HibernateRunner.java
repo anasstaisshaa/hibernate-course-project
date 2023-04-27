@@ -32,14 +32,28 @@ import java.util.Set;
 public class HibernateRunner {
     @Transactional
     public static void main(String[] args) throws SQLException {
-
-        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
-        Session session = sessionFactory.openSession()) {
-            session.beginTransaction();
-
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
             TestDataImporter.importData(sessionFactory);
+            User user = null;
+            try (var session = sessionFactory.openSession()) {
+                session.beginTransaction();
 
-            session.getTransaction().commit();
+                user = session.find(User.class, 1L);
+                user.getCompany().getName();
+                user.getUserChats().size();
+                var user1 = session.find(User.class, 1L);
+
+                session.getTransaction().commit();
+            }
+            try (var session = sessionFactory.openSession()) {
+                session.beginTransaction();
+
+                var user2 = session.find(User.class, 1L);
+                user2.getCompany().getName();
+                user2.getUserChats().size();
+
+                session.getTransaction().commit();
+            }
         }
     }
 }
