@@ -17,6 +17,7 @@ import org.hibernate.graph.GraphSemantic;
 import org.hibernate.graph.RootGraph;
 import org.hibernate.jdbc.Work;
 import org.hibernate.jpa.QueryHints;
+import org.hibernate.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,6 +44,13 @@ public class HibernateRunner {
                 user.getUserChats().size();
                 var user1 = session.find(User.class, 1L);
 
+                List<Company> companyId = session.createQuery("select c from Company c where c.id = :companyId", Company.class)
+                        .setParameter("companyId", 1L)
+                        .setCacheable(true)
+                        .list();
+
+
+
                 session.getTransaction().commit();
             }
             try (var session = sessionFactory.openSession()) {
@@ -51,6 +59,11 @@ public class HibernateRunner {
                 var user2 = session.find(User.class, 1L);
                 user2.getCompany().getName();
                 user2.getUserChats().size();
+
+                List<Company> companyId = session.createQuery("select c from Company c where c.id = :companyId", Company.class)
+                        .setParameter("companyId", 1L)
+                        .setCacheable(true)
+                        .list();
 
                 session.getTransaction().commit();
             }
