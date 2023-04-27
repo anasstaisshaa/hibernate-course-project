@@ -15,7 +15,7 @@ import java.util.*;
 @AllArgsConstructor
 @ToString(exclude = "users")
 @EqualsAndHashCode(of = "name")
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "Companies")
 @Builder
 @Entity
 public class Company {
