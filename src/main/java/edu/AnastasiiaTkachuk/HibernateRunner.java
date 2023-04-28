@@ -1,7 +1,12 @@
 package edu.AnastasiiaTkachuk;
 
 import edu.AnastasiiaTkachuk.converter.BirthdayConverter;
+import edu.AnastasiiaTkachuk.dao.CompanyRepository;
+import edu.AnastasiiaTkachuk.dao.UserRepository;
 import edu.AnastasiiaTkachuk.entity.*;
+import edu.AnastasiiaTkachuk.mapper.CompanyReadMapper;
+import edu.AnastasiiaTkachuk.mapper.UserReadMapper;
+import edu.AnastasiiaTkachuk.service.UserService;
 import edu.AnastasiiaTkachuk.util.HibernateUtil;
 import edu.AnastasiiaTkachuk.util.TestDataImporter;
 import jakarta.persistence.LockModeType;
@@ -22,6 +27,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -34,39 +42,21 @@ public class HibernateRunner {
     @Transactional
     public static void main(String[] args) throws SQLException {
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
-            TestDataImporter.importData(sessionFactory);
-            User user = null;
-            try (var session = sessionFactory.openSession()) {
-                session.beginTransaction();
 
-                user = session.find(User.class, 1L);
-                user.getCompany().getName();
-                user.getUserChats().size();
-                var user1 = session.find(User.class, 1L);
+            //TestDataImporter.importData(sessionFactory);
+            Session session = (Session) Proxy.newProxyInstance(SessionFactory.class.getClassLoader(), new Class[]{Session.class},
+                    (proxy, method, args1) -> method.invoke(sessionFactory.getCurrentSession(), args1));
+            session.beginTransaction();
 
-                List<Company> companyId = session.createQuery("select c from Company c where c.id = :companyId", Company.class)
-                        .setParameter("companyId", 1L)
-                        .setCacheable(true)
-                        .list();
+            UserRepository userRepository = new UserRepository(session);
+            CompanyReadMapper companyReadMapper = new CompanyReadMapper();
+            UserReadMapper userReadMapper = new UserReadMapper(companyReadMapper);
+
+            UserService userService = new UserService(userRepository, userReadMapper);
+            userService.findById(1L).ifPresent(System.out::println);
 
 
-
-                session.getTransaction().commit();
-            }
-            try (var session = sessionFactory.openSession()) {
-                session.beginTransaction();
-
-                var user2 = session.find(User.class, 1L);
-                user2.getCompany().getName();
-                user2.getUserChats().size();
-
-                List<Company> companyId = session.createQuery("select c from Company c where c.id = :companyId", Company.class)
-                        .setParameter("companyId", 1L)
-                        .setCacheable(true)
-                        .list();
-
-                session.getTransaction().commit();
-            }
+            session.getTransaction().commit();
         }
     }
 }

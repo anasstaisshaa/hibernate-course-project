@@ -1468,3 +1468,275 @@ java.lang.NullPointerException: Cannot invoke "javax.cache.CacheManager.close()"
 [2023-04-27 21:25:08,599] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
 [2023-04-27 21:25:08,606] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
 [2023-04-27 21:25:08,614] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
+[2023-04-28 22:26:38,308] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-28 22:26:40,227] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-28 22:26:40,236] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-28 22:26:40,236] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:26:40,237] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-28 22:26:40,237] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-28 22:26:40,243] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-28 22:26:40,759] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-28 22:26:41,857] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:26:42,042] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-update-timestamps-region' created in EhcacheManager.
+[2023-04-28 22:26:42,065] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:26:42,070] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-query-results-region' created in EhcacheManager.
+[2023-04-28 22:26:42,103] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[edu.AnastasiiaTkachuk.entity.User.userChats] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:26:42,109] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' created in EhcacheManager.
+[2023-04-28 22:26:42,124] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:26:42,134] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Users' created in EhcacheManager.
+[2023-04-28 22:26:42,136] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Companies] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:26:42,140] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Companies' created in EhcacheManager.
+[2023-04-28 22:26:43,324] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-28 22:26:43,904] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1e258d3b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:26:44,157] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7bda01da] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:26:44,516] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-04-28 22:26:44,843] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-query-results-region' removed from EhcacheManager.
+[2023-04-28 22:26:44,849] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Companies' removed from EhcacheManager.
+[2023-04-28 22:26:44,851] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' removed from EhcacheManager.
+[2023-04-28 22:26:44,852] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
+[2023-04-28 22:26:44,855] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:26:44,863] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
+[2023-04-28 22:32:32,270] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-28 22:32:33,589] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-28 22:32:33,596] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-28 22:32:33,596] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:32:33,597] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-28 22:32:33,597] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-28 22:32:33,602] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-28 22:32:34,015] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-28 22:32:35,069] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:32:35,232] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-update-timestamps-region' created in EhcacheManager.
+[2023-04-28 22:32:35,250] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:32:35,255] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-query-results-region' created in EhcacheManager.
+[2023-04-28 22:32:35,284] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:32:35,289] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Users' created in EhcacheManager.
+[2023-04-28 22:32:35,306] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Companies] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:32:35,316] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Companies' created in EhcacheManager.
+[2023-04-28 22:32:35,318] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[edu.AnastasiiaTkachuk.entity.User.userChats] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:32:35,326] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' created in EhcacheManager.
+[2023-04-28 22:32:36,715] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-28 22:32:37,435] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4392362c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:32:37,556] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@45bf93bb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:32:38,145] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-query-results-region' removed from EhcacheManager.
+[2023-04-28 22:32:38,146] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Companies' removed from EhcacheManager.
+[2023-04-28 22:32:38,146] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' removed from EhcacheManager.
+[2023-04-28 22:32:38,147] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
+[2023-04-28 22:32:38,148] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:32:38,151] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
+[2023-04-28 22:36:28,821] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-28 22:36:30,050] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-28 22:36:30,056] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-28 22:36:30,057] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:36:30,057] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-28 22:36:30,058] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-28 22:36:30,064] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-28 22:36:30,580] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-28 22:36:31,648] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:36:31,800] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-update-timestamps-region' created in EhcacheManager.
+[2023-04-28 22:36:31,816] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:36:31,821] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-query-results-region' created in EhcacheManager.
+[2023-04-28 22:36:31,841] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:36:31,845] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Users' created in EhcacheManager.
+[2023-04-28 22:36:31,851] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Companies] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:36:31,856] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Companies' created in EhcacheManager.
+[2023-04-28 22:36:31,857] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[edu.AnastasiiaTkachuk.entity.User.userChats] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:36:31,861] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' created in EhcacheManager.
+[2023-04-28 22:36:32,948] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-28 22:36:33,551] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4392362c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:36:33,639] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@45bf93bb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:36:34,107] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-query-results-region' removed from EhcacheManager.
+[2023-04-28 22:36:34,108] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Companies' removed from EhcacheManager.
+[2023-04-28 22:36:34,108] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' removed from EhcacheManager.
+[2023-04-28 22:36:34,109] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
+[2023-04-28 22:36:34,111] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:36:34,115] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
+[2023-04-28 22:37:14,675] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-28 22:37:15,926] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-28 22:37:15,929] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-28 22:37:15,930] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:37:15,930] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-28 22:37:15,932] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-28 22:37:15,935] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-28 22:37:16,330] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-28 22:37:17,336] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:37:17,524] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-update-timestamps-region' created in EhcacheManager.
+[2023-04-28 22:37:17,541] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:37:17,546] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-query-results-region' created in EhcacheManager.
+[2023-04-28 22:37:17,566] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[edu.AnastasiiaTkachuk.entity.User.userChats] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:37:17,570] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' created in EhcacheManager.
+[2023-04-28 22:37:17,576] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:37:17,582] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Users' created in EhcacheManager.
+[2023-04-28 22:37:17,583] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Companies] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:37:17,587] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Companies' created in EhcacheManager.
+[2023-04-28 22:37:18,779] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-28 22:37:19,376] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1e258d3b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:37:19,453] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7bda01da] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:37:20,117] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-query-results-region' removed from EhcacheManager.
+[2023-04-28 22:37:20,119] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Companies' removed from EhcacheManager.
+[2023-04-28 22:37:20,120] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' removed from EhcacheManager.
+[2023-04-28 22:37:20,121] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
+[2023-04-28 22:37:20,123] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:37:20,128] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
+[2023-04-28 22:41:52,467] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-28 22:41:53,755] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-28 22:41:53,762] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-28 22:41:53,763] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:41:53,763] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-28 22:41:53,764] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-28 22:41:53,771] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-28 22:41:54,168] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-28 22:41:55,430] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:41:55,603] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-update-timestamps-region' created in EhcacheManager.
+[2023-04-28 22:41:55,627] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:41:55,633] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-query-results-region' created in EhcacheManager.
+[2023-04-28 22:41:55,659] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Companies] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:41:55,663] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Companies' created in EhcacheManager.
+[2023-04-28 22:41:55,670] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[edu.AnastasiiaTkachuk.entity.User.userChats] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:41:55,677] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' created in EhcacheManager.
+[2023-04-28 22:41:55,680] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:41:55,684] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Users' created in EhcacheManager.
+[2023-04-28 22:41:56,673] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-28 22:41:57,160] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3e6acec2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:41:57,247] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3cad24ae] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:41:57,771] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-query-results-region' removed from EhcacheManager.
+[2023-04-28 22:41:57,772] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Companies' removed from EhcacheManager.
+[2023-04-28 22:41:57,773] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' removed from EhcacheManager.
+[2023-04-28 22:41:57,775] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
+[2023-04-28 22:41:57,779] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:41:57,783] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
+[2023-04-28 22:42:38,867] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-28 22:42:40,089] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-28 22:42:40,096] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-28 22:42:40,096] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:42:40,098] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-28 22:42:40,098] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-28 22:42:40,106] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-28 22:42:40,585] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-28 22:42:41,565] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:42:41,707] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-update-timestamps-region' created in EhcacheManager.
+[2023-04-28 22:42:41,725] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:42:41,729] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-query-results-region' created in EhcacheManager.
+[2023-04-28 22:42:41,750] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Companies] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:42:41,755] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Companies' created in EhcacheManager.
+[2023-04-28 22:42:41,763] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[edu.AnastasiiaTkachuk.entity.User.userChats] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:42:41,768] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' created in EhcacheManager.
+[2023-04-28 22:42:41,772] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 22:42:41,777] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Users' created in EhcacheManager.
+[2023-04-28 22:42:42,809] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-28 22:42:43,324] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12be4f83] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:42:43,402] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3d764641] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 22:42:44,464] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-query-results-region' removed from EhcacheManager.
+[2023-04-28 22:42:44,466] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Companies' removed from EhcacheManager.
+[2023-04-28 22:42:44,467] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' removed from EhcacheManager.
+[2023-04-28 22:42:44,468] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
+[2023-04-28 22:42:44,470] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 22:42:44,473] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
+[2023-04-28 23:07:21,272] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-28 23:07:22,660] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-28 23:07:22,669] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-28 23:07:22,670] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 23:07:22,671] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-28 23:07:22,672] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-28 23:07:22,679] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-28 23:07:23,123] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-28 23:07:24,360] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:07:24,562] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-update-timestamps-region' created in EhcacheManager.
+[2023-04-28 23:07:24,585] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:07:24,590] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-query-results-region' created in EhcacheManager.
+[2023-04-28 23:07:24,615] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[edu.AnastasiiaTkachuk.entity.User.userChats] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:07:24,622] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' created in EhcacheManager.
+[2023-04-28 23:07:24,627] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:07:24,633] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Users' created in EhcacheManager.
+[2023-04-28 23:07:24,637] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Companies] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:07:24,640] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Companies' created in EhcacheManager.
+[2023-04-28 23:07:25,792] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-28 23:07:26,446] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1e258d3b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 23:07:26,578] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7bda01da] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 23:07:27,204] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-query-results-region' removed from EhcacheManager.
+[2023-04-28 23:07:27,205] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Companies' removed from EhcacheManager.
+[2023-04-28 23:07:27,206] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' removed from EhcacheManager.
+[2023-04-28 23:07:27,206] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
+[2023-04-28 23:07:27,208] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 23:07:27,211] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
+[2023-04-28 23:07:48,456] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-28 23:07:49,506] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-28 23:07:49,513] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-28 23:07:49,514] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 23:07:49,515] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-28 23:07:49,516] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-28 23:07:49,522] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-28 23:07:49,968] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-28 23:07:51,158] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:07:51,309] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-update-timestamps-region' created in EhcacheManager.
+[2023-04-28 23:07:51,340] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:07:51,347] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-query-results-region' created in EhcacheManager.
+[2023-04-28 23:07:51,370] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[edu.AnastasiiaTkachuk.entity.User.userChats] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:07:51,375] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' created in EhcacheManager.
+[2023-04-28 23:07:51,381] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Companies] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:07:51,385] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Companies' created in EhcacheManager.
+[2023-04-28 23:07:51,388] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:07:51,393] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Users' created in EhcacheManager.
+[2023-04-28 23:07:52,888] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-28 23:07:53,374] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@32328dc4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 23:07:53,448] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@39f93225] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 23:07:54,158] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-query-results-region' removed from EhcacheManager.
+[2023-04-28 23:07:54,159] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Companies' removed from EhcacheManager.
+[2023-04-28 23:07:54,160] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' removed from EhcacheManager.
+[2023-04-28 23:07:54,162] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
+[2023-04-28 23:07:54,164] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 23:07:54,169] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
+[2023-04-28 23:09:04,938] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-28 23:09:05,980] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-28 23:09:05,984] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-28 23:09:05,985] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 23:09:05,985] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-28 23:09:05,986] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-28 23:09:05,991] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-28 23:09:06,366] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-28 23:09:07,252] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:09:07,407] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-update-timestamps-region' created in EhcacheManager.
+[2023-04-28 23:09:07,424] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:09:07,429] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-query-results-region' created in EhcacheManager.
+[2023-04-28 23:09:07,449] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[edu.AnastasiiaTkachuk.entity.User.userChats] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:09:07,453] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' created in EhcacheManager.
+[2023-04-28 23:09:07,457] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:09:07,461] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Users' created in EhcacheManager.
+[2023-04-28 23:09:07,463] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Companies] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:09:07,466] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Companies' created in EhcacheManager.
+[2023-04-28 23:09:08,388] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-28 23:09:09,018] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@839755f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 23:09:09,534] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 133] SQL Error: 0, SQLState: 23505
+[2023-04-28 23:09:09,535] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 138] ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "uk_ck8wy9n707u5ictdeeg36f3na"
+  Подробности: Ключ "(name)=(Microsoft)" уже существует.
+[2023-04-28 23:09:09,615] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-query-results-region' removed from EhcacheManager.
+[2023-04-28 23:09:09,625] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Companies' removed from EhcacheManager.
+[2023-04-28 23:09:09,628] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' removed from EhcacheManager.
+[2023-04-28 23:09:09,631] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
+[2023-04-28 23:09:09,643] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 23:09:09,660] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
+[2023-04-28 23:09:17,702] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-28 23:09:18,833] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-04-28 23:09:18,840] INFO [org.hibernate.orm.connections.pooling: 139] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-04-28 23:09:18,840] INFO [org.hibernate.orm.connections.pooling: 161] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 23:09:18,842] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-04-28 23:09:18,842] INFO [org.hibernate.orm.connections.pooling: 174] HHH10001003: Autocommit mode: false
+[2023-04-28 23:09:18,846] INFO [org.hibernate.orm.connections.pooling: 366] HHH10001115: Connection pool size: 20 (min=1)
+[2023-04-28 23:09:19,266] INFO [SQL dialect: 66] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-04-28 23:09:20,338] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:09:20,514] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-update-timestamps-region' created in EhcacheManager.
+[2023-04-28 23:09:20,539] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:09:20,554] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'default-query-results-region' created in EhcacheManager.
+[2023-04-28 23:09:20,586] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[edu.AnastasiiaTkachuk.entity.User.userChats] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:09:20,591] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' created in EhcacheManager.
+[2023-04-28 23:09:20,601] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Companies] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:09:20,606] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Companies' created in EhcacheManager.
+[2023-04-28 23:09:20,608] WARN [org.hibernate.orm.cache: 108] HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2023-04-28 23:09:20,613] INFO [org.ehcache.core.EhcacheManager: 305] Cache 'Users' created in EhcacheManager.
+[2023-04-28 23:09:21,727] WARN [org.hibernate.metamodel.internal.MetadataContext: 690] HHH015011: Unable to locate static metamodel field : edu.AnastasiiaTkachuk.entity.PersonalInfo_#birthday; this may or may not indicate a problem with the static metamodel
+[2023-04-28 23:09:22,213] INFO [org.hibernate.orm.connections.access: 45] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@681d704e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-04-28 23:09:22,709] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-query-results-region' removed from EhcacheManager.
+[2023-04-28 23:09:22,710] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Companies' removed from EhcacheManager.
+[2023-04-28 23:09:22,710] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'edu.AnastasiiaTkachuk.entity.User.userChats' removed from EhcacheManager.
+[2023-04-28 23:09:22,711] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'Users' removed from EhcacheManager.
+[2023-04-28 23:09:22,713] INFO [org.hibernate.orm.connections.pooling: 608] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2023-04-28 23:09:22,717] INFO [org.ehcache.core.EhcacheManager: 216] Cache 'default-update-timestamps-region' removed from EhcacheManager.
