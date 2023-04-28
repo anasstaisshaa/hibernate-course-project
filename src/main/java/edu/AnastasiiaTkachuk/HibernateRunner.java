@@ -3,8 +3,10 @@ package edu.AnastasiiaTkachuk;
 import edu.AnastasiiaTkachuk.converter.BirthdayConverter;
 import edu.AnastasiiaTkachuk.dao.CompanyRepository;
 import edu.AnastasiiaTkachuk.dao.UserRepository;
+import edu.AnastasiiaTkachuk.dto.UserCreateDto;
 import edu.AnastasiiaTkachuk.entity.*;
 import edu.AnastasiiaTkachuk.mapper.CompanyReadMapper;
+import edu.AnastasiiaTkachuk.mapper.UserCreateMapper;
 import edu.AnastasiiaTkachuk.mapper.UserReadMapper;
 import edu.AnastasiiaTkachuk.service.UserService;
 import edu.AnastasiiaTkachuk.util.HibernateUtil;
@@ -51,9 +53,23 @@ public class HibernateRunner {
             UserRepository userRepository = new UserRepository(session);
             CompanyReadMapper companyReadMapper = new CompanyReadMapper();
             UserReadMapper userReadMapper = new UserReadMapper(companyReadMapper);
+            CompanyRepository companyRepository = new CompanyRepository(session);
+            UserCreateMapper userCreateMapper = new UserCreateMapper(companyRepository);
 
-            UserService userService = new UserService(userRepository, userReadMapper);
+            UserService userService = new UserService(userRepository, userReadMapper, userCreateMapper);
+
             userService.findById(1L).ifPresent(System.out::println);
+            UserCreateDto userCreateDto = new UserCreateDto(
+                    PersonalInfo.builder()
+                            .firstname("Liza")
+                            .lastname("Stepanova")
+                            .birthday(new Birthday(LocalDate.now()))
+                            .build(),
+                    "liza@gmail.com",
+                    Role.USER,
+                    1
+            );
+            userService.create(userCreateDto);
 
 
             session.getTransaction().commit();
